@@ -22,8 +22,21 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2" ng-controller="MenuCtrl">
+          <img ng-src="{{user.photo_big}}">
+          <p>{{ user.first_name + ' ' + user.last_name }}</p>
+          <p><a ng-click="logout()">Выход</a></p>
+          <ul class="nav nav-tabs nav-stacked">
+            <li ng-repeat="item in items" ng-class="getItemClass(item.url)">
+              <a href="#{{item.url}}">{{item.label}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="span10" ng-view></div>
+      </div>
+    </div>
 
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
@@ -32,8 +45,13 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
     <script src="scripts/services/vkontakte.js"></script>
+    <script src="scripts/directives/ng_html.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/video.js"></script>
+    <script src="scripts/controllers/menu.js"></script>
+    <script src="scripts/controllers/albums.js"></script>
+    <script src="scripts/controllers/photos.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

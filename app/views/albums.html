@@ -1,0 +1,22 @@
+<h1>Фотографии</h1>
+
+<div class="row">
+  <div class="span10">
+    <div class="row-fluid">
+      <ul class="thumbnails">
+        <li ng-repeat="album in albums" class="span2">
+          <a class="thumbnail" href="#/photos/{{album.owner_id}}/{{ album.aid }}">
+            <img ng-src="{{ album.thumb_src }}">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="span2">
+    <ul>
+      <li ng-repeat="friend in friends">
+        <a href="#/photos/{{friend.uid}}">{{friend.first_name}} {{friend.last_name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

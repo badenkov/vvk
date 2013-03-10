@@ -1,1 +1,16 @@
-<a href="#" ng-click="logout()">Выйти</a>
+<h2>Wall</h2>
+
+<ul class="media-list">
+  <li class="media" ng-repeat="entity in wall">
+    <div class="media-body">
+      <h4 class="media-heading">Media heading</h4>
+      <div ng-html="entity.text"></div>
+      <div ng-repeat="attachment in entity.attachments">
+        <div ng-show="attachment.photo">
+          <img ng-src="{{attachment.photo.src_big}}">
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
