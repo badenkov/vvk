@@ -28,3 +28,20 @@ angular.module('vkApp', [])
       });
   });
 
+jQuery(function() {
+  $(document).on('click', 'a.colorbox', function(event) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    var href = $(this).attr('href'),
+        rel = $(this).attr('rel');
+
+    $(this).closest('div').find('a[rel="'+rel+'"]').colorbox({
+      open: false,
+      rel: rel
+    });
+
+    $(this).colorbox({open: true});
+
+  });
+});

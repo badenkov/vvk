@@ -7,6 +7,7 @@
         <li ng-repeat="album in albums" class="span2">
           <a class="thumbnail" href="#/photos/{{album.owner_id}}/{{ album.aid }}">
             <img ng-src="{{ album.thumb_src }}">
+            <strong>{{ album.title }}</strong>
           </a>
         </li>
       </ul>
